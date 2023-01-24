@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-</head>
-<body>
-    Hello World!
-</body>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="src/app.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wheater-app-wrapper">
+        <h1>NAME OF CITY</h1>
+        <ul>
+          <li>Description Sky</li>
+          <li>Last updated: DAY</li>
+        </ul>
+        <div class="row">
+          <div class="col-6">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="clear sky"
+            />
+            24° C|F
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Wind</li>
+              <li>Humidity</li>
+            </ul>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+      </div>
+    </div>
+    <small>
+      <a href=""
+    </small>
+  </body>
 </html>
