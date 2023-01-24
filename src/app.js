@@ -52,3 +52,14 @@ let city = "Bariloche";
 let apiURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
 
 axios.get(apiURL).then(getTemperature);
+
+// Search New City //
+
+function searchCity(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  search(cityInput.value);
+}
+
+let Form = document.querySelector("#search-form");
+Form.addEventListener("submit", searchCity);
