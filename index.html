@@ -31,7 +31,7 @@
             <button class="btn btn-primary" type="submit">Search</button>
           </span>
         </div>
-        <br>
+        <br />
         <h1>NAME OF CITY</h1>
         <ul>
           <li>Description Sky</li>
@@ -39,21 +39,23 @@
         </ul>
         <div class="row">
           <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="clear sky"
-            />
-            24° C|F
-          </div>
+            <div class="d-flex weather-temperature">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt="clear sky"
+                id="icon"
+              />
+          <strong id="temperature">24</strong> <span class="units"> <a href="">C</a> | <a href="">F</a> </span>   
+          </span>
+          </div></div>
           <div class="col-6">
             <ul>
-              <li>Wind</li>
-              <li>Humidity</li>
+              <li id="wind">km/h</li>
+              <li id="humidity">%</li>
             </ul>
           </div>
         </div>
-      </div>
-
+</div>
       <small>
         <a href="https://github.com/orneasme/Weather-App" target="_blank">
           Open-source code</a

@@ -7,6 +7,15 @@ h1 {
   font-size: 24px;
 }
 
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  font-size: 14px;
+}
+
 .weather-app-wrapper {
   max-width: 600px;
   border: 1px solid #adbabf;
@@ -14,11 +23,16 @@ h1 {
   border-radius: 10px;
 }
 
-ul {
-  padding: 0;
+#icon {
+  margin-right: 10px;
 }
 
-li {
-  list-style: none;
+#temperature {
+  font-size: 42px;
+  font-weight: lighter;
+  line-height: 1;
+}
+
+.units {
   font-size: 14px;
 }
