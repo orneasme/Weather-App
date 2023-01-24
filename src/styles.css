@@ -3,5 +3,8 @@ h1 {
 }
 
 .weather-app-wrapper {
-  border-color: blue;
+  max-width: 600px;
+  border: 1px solid #adbabf;
+  padding: 20px;
+  border-radius: 10px;
 }
