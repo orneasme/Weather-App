@@ -1,5 +1,10 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 h1 {
   color: blueviolet;
+  font-size: 24px;
 }
 
 .weather-app-wrapper {
@@ -7,4 +12,13 @@ h1 {
   border: 1px solid #adbabf;
   padding: 20px;
   border-radius: 10px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  font-size: 14px;
 }
