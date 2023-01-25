@@ -7,10 +7,9 @@ function getTemperature(response) {
 }
 
 function displayTemperature(response) {
-  console.log(response.data);
-  let Temperature = Math.round(response.data.main.temp);
+  celcius = Math.round(response.data.main.temp);
   let degrees = document.querySelector("#temperature");
-  degrees.innerHTML = Temperature;
+  degrees.innerHTML = celcius;
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
   let Skydescription = document.querySelector("#description");
@@ -25,7 +24,7 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${iconId}@2x.png`
+    `https://openweathermap.org/img/wn/${iconId}@2x.png`
   );
 }
 
@@ -59,7 +58,6 @@ function search(city) {
 
   axios.get(apiURL).then(getTemperature);
 }
-search("Bariloche");
 
 // Search New City //
 
@@ -71,3 +69,18 @@ function searchCity(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
+
+//unit conversion
+
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = document.querySelector("#temperature");
+  let Fahrenheit = celcius * 1.8 + 32;
+  fahrenheitTemperature.innerHTML = Math.round(Fahrenheit);
+}
+
+let celcius = null;
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+search("Bariloche");
