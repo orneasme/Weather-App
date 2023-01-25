@@ -47,11 +47,13 @@ function formatDate(timestamp) {
   return ` ${day}, ${hours}:${minutes}`;
 }
 
-let apiKey = "53534e195e419f621c24a11bb65c4126";
-let city = "Bariloche";
-let apiURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
+function search(city) {
+  let apiKey = "53534e195e419f621c24a11bb65c4126";
+  let apiURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
 
-axios.get(apiURL).then(getTemperature);
+  axios.get(apiURL).then(getTemperature);
+}
+search("Bariloche");
 
 // Search New City //
 
@@ -61,5 +63,5 @@ function searchCity(event) {
   search(cityInput.value);
 }
 
-let Form = document.querySelector("#search-form");
-Form.addEventListener("submit", searchCity);
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", searchCity);
