@@ -79,8 +79,16 @@ function displayFahrenheit(event) {
   fahrenheitTemperature.innerHTML = Math.round(Fahrenheit);
 }
 
+function displayCelsius(event) {
+  event.preventDefault();
+  let celciusTemperature = document.querySelector("#temperature");
+  celciusTemperature.innerHTML = celcius;
+}
+
 let celcius = null;
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", displayFahrenheit);
+let celsiusLink = document.querySelector("#celcius");
+celsiusLink.addEventListener("click", displayCelsius);
 
 search("Bariloche");
