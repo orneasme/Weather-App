@@ -40,3 +40,14 @@ li {
 #description {
   text-transform: capitalize;
 }
+
+.weatherForecast {
+  margin-top: 20px;
+  text-align: center;
+  color: black;
+  margin-left: 20px;
+}
+
+.forecast-temperature {
+  font-size: 13px;
+}
