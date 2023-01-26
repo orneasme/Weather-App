@@ -27,6 +27,27 @@ function displayTemperature(response) {
     `https://openweathermap.org/img/wn/${iconId}@2x.png`
   );
 }
+//Weather forecast
+
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+  let forecastElement = `<div class="row">`;
+  let days = ["Fri", "Sat", "Sund", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastElement =
+      forecastElement +
+      `
+    <div class="col-2">
+               <div class="forecast-Date"> ${day} </div>
+                <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" width="30px">
+               <div class="forecast-temperature"><span class="forecast-temperature-max">24°</span><span class="forecast-temperature-min">|10°</span></div>
+              </div>`;
+  });
+  forecastElement = forecastElement + `</div>`;
+  forecast.innerHTML = forecastElement;
+}
+
+displayForecast();
 
 function formatDate(timestamp) {
   let date = new Date(timestamp);
