@@ -6,6 +6,12 @@ function getTemperature(response) {
   axios.get(apiUrl).then(displayTemperature);
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+}
+
+getForecast();
+
 function displayTemperature(response) {
   celcius = Math.round(response.data.main.temp);
   let degrees = document.querySelector("#temperature");
@@ -26,6 +32,7 @@ function displayTemperature(response) {
     "src",
     `https://openweathermap.org/img/wn/${iconId}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 //Weather forecast
 
