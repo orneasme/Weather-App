@@ -6,12 +6,6 @@ function getTemperature(response) {
   axios.get(apiUrl).then(displayTemperature);
 }
 
-function getForecast(coordinates) {
-  console.log(coordinates);
-}
-
-getForecast();
-
 function displayTemperature(response) {
   celcius = Math.round(response.data.main.temp);
   let degrees = document.querySelector("#temperature");
@@ -36,25 +30,45 @@ function displayTemperature(response) {
 }
 //Weather forecast
 
-function displayForecast() {
+function getForecast(coordinates) {
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let apiKey = `btf543c27aa56491e02b95f3b69cob77`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecastDays(timestamp) {
+  let date = new Date(timestamp);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  let day = days[date.getDay()];
+  return day;
+}
+
+function displayForecast(response) {
+  let weeklyForecast = response.data.daily;
   let forecast = document.querySelector("#forecast");
   let forecastElement = `<div class="row">`;
-  let days = ["Fri", "Sat", "Sund", "Mon", "Tue", "Wed"];
-  days.forEach(function (day) {
-    forecastElement =
-      forecastElement +
-      `
+  weeklyForecast.forEach(function (day, index) {
+    if (index < 7 && index != 0) {
+      let iconUrl = day.condition.icon_url;
+      let max = Math.round(day.temperature.maximum);
+      let min = Math.round(day.temperature.minimum);
+      forecastElement =
+        forecastElement +
+        `
     <div class="col-2">
-               <div class="forecast-Date"> ${day} </div>
-                <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" width="30px">
-               <div class="forecast-temperature"><span class="forecast-temperature-max">24°</span><span class="forecast-temperature-min">|10°</span></div>
+               <div class="forecast-Date"> ${displayForecastDays(
+                 day.time * 1000
+               )} </div>
+                <img src="${iconUrl}" width="30px">
+               <div class="forecast-temperature"><span class="forecast-temperature-max">${max}°</span><span class="forecast-temperature-min">|${min}°</span></div>
               </div>`;
+    }
   });
   forecastElement = forecastElement + `</div>`;
   forecast.innerHTML = forecastElement;
 }
-
-displayForecast();
 
 function formatDate(timestamp) {
   let date = new Date(timestamp);
