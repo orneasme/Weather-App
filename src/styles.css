@@ -1,10 +1,18 @@
+:root {
+  --primary-color: blueviolet;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
-  color: blueviolet;
+  color: var(--primary-color);
   font-size: 24px;
+}
+
+h2 {
+  color: var(--primary-color);
 }
 
 ul {
@@ -17,6 +25,7 @@ li {
 }
 
 .weather-app-wrapper {
+  margin-top: 50px;
   max-width: 600px;
   border: 1px solid #adbabf;
   padding: 20px;
